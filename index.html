@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saurav — Web Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- ========== INTRO SCREEN ========== -->
+  <div class="intro-screen" id="introScreen">
+    <div class="intro-content">
+      <p class="intro-greeting">Hi, I'm</p>
+      <h1 class="intro-name">Saurav</h1>
+      <p class="intro-sub">I Build Modern Websites</p>
+    </div>
+    <div class="intro-bar"></div>
+  </div>
+
+  <!-- ========== NOISE OVERLAY ========== -->
+  <div class="noise-overlay"></div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">S<span class="accent">.</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-cta" onclick="scrollToSection('contact')">Let's Talk</button>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" onclick="closeMenu()">About</a></li>
+      <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+      <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+      <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero" id="home">
+    <!-- Animated background grid -->
+    <div class="hero-grid"></div>
+    <!-- Glowing orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge reveal">
+        <span class="badge-dot"></span>
+        Available for projects
+      </div>
+      <h1 class="hero-title reveal">
+        <span class="line">Building</span>
+        <span class="line gradient-text">Digital</span>
+        <span class="line">Experiences</span>
+      </h1>
+      <p class="hero-subtitle reveal">
+        I'm <strong>Saurav</strong>, a student web developer crafting 
+        <span class="typed-text" id="typedText"></span><span class="cursor-blink">|</span>
+      </p>
+      <div class="hero-actions reveal">
+        <button class="btn-primary" onclick="scrollToSection('projects')">
+          <span>View Projects</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <button class="btn-ghost" onclick="scrollToSection('contact')">Contact Me</button>
+      </div>
+      <div class="hero-stats reveal">
+        <div class="stat"><span class="stat-num">10+</span><span class="stat-label">Projects</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">2+</span><span class="stat-label">Years Learning</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">∞</span><span class="stat-label">Curiosity</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="code-card">
+        <div class="code-card-header">
+          <div class="dot red"></div>
+          <div class="dot yellow"></div>
+          <div class="dot green"></div>
+          <span class="code-filename">saurav.js</span>
+        </div>
+        <pre class="code-body"><code><span class="c-keyword">const</span> <span class="c-var">developer</span> = {
+  <span class="c-key">name</span>: <span class="c-str">"Saurav"</span>,
+  <span class="c-key">role</span>: <span class="c-str">"Web Developer"</span>,
+  <span class="c-key">status</span>: <span class="c-str">"Student 🎓"</span>,
+  <span class="c-key">passion</span>: [
+    <span class="c-str">"Clean Code"</span>,
+    <span class="c-str">"Good Design"</span>,
+    <span class="c-str">"Innovation"</span>
+  ],
+  <span class="c-key">goal</span>: <span class="c-str">"Future Entrepreneur"</span>,
+  <span class="c-fn">build</span>() {
+    <span class="c-keyword">return</span> <span class="c-str">"Amazing things ✨"</span>;
+  }
+};</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="label-line"></span>
+        <span>About Me</span>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <h2 class="section-title">Crafting the web,<br/><span class="gradient-text">one line at a time.</span></h2>
+          <p>I'm a passionate student web developer on a mission to turn ideas into polished, functional, and beautiful websites. I believe in writing clean code and creating experiences that users love.</p>
+          <p>Right now, I'm sharpening my skills in <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong> — building real projects and solving real problems every single day.</p>
+          <p>My goal? To grow into a full-stack developer and eventually launch my own tech startup. Every line of code I write today is a step toward that future.</p>
+          <div class="about-tags">
+            <span class="tag">Student Developer</span>
+            <span class="tag">Problem Solver</span>
+            <span class="tag">Future Entrepreneur</span>
+            <span class="tag">Open Source</span>
+          </div>
+        </div>
+
+        <div class="about-cards reveal">
+          <div class="about-card">
+            <div class="about-card-icon">🎯</div>
+            <h3>Focused</h3>
+            <p>Deep-diving into modern web technologies and best practices every day.</p>
+          </div>
+          <div class="about-card">
+            <div class="about-card-icon">🚀</div>
+            <h3>Ambitious</h3>
+            <p>Building toward launching my own product and startup in the future.</p>
+          </div>
+          <div class="about-card">
+            <div class="about-card-icon">💡</div>
+            <h3>Creative</h3>
+            <p>Merging design thinking with technical skill to build standout projects.</p>
+          </div>
+          <div class="about-card">
+            <div class="about-card-icon">🔥</div>
+            <h3>Consistent</h3>
+            <p>Committing to growth daily — learning, building, and shipping always.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS SECTION ========== -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="label-line"></span>
+        <span>Skills</span>
+      </div>
+      <h2 class="section-title reveal">My Tech <span class="gradient-text">Toolkit</span></h2>
+      <p class="section-sub reveal">Technologies I work with to bring ideas to life.</p>
+
+      <div class="skills-grid">
+
+        <!-- Skill bars -->
+        <div class="skills-bars reveal">
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">HTML5</span>
+              <span class="skill-pct">92%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">CSS3 / Animations</span>
+              <span class="skill-pct">85%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">JavaScript (ES6+)</span>
+              <span class="skill-pct">75%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Responsive Design</span>
+              <span class="skill-pct">88%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Git & GitHub</span>
+              <span class="skill-pct">70%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+          </div>
+        </div>
+
+        <!-- Tech pills / icons -->
+        <div class="tech-pills reveal">
+          <div class="tech-pill">
+            <span class="tech-icon">🌐</span>
+            <span>HTML5</span>
+          </div>
+          <div class="tech-pill">
+            <span class="tech-icon">🎨</span>
+            <span>CSS3</span>
+          </div>
+          <div class="tech-pill">
+            <span class="tech-icon">⚡</span>
+            <span>JavaScript</span>
+          </div>
+          <div class="tech-pill">
+            <span class="tech-icon">📱</span>
+            <span>Responsive</span>
+          </div>
+          <div class="tech-pill">
+            <span class="tech-icon">🐙</span>
+            <span>GitHub</span>
+          </div>
+          <div class="tech-pill">
+            <span class="tech-icon">🎭</span>
+            <span>Animations</span>
+          </div>
+          <div class="tech-pill">
+            <span class="tech-icon">🔧</span>
+            <span>VS Code</span>
+          </div>
+          <div class="tech-pill">
+            <span class="tech-icon">🖥️</span>
+            <span>Figma</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS SECTION ========== -->
+  <!-- 
+    HOW TO ADD MORE PROJECTS:
+    Copy one .project-card block below and update:
+    - data-index (increment number)
+    - .project-number (e.g., 04)
+    - .project-title
+    - .project-desc
+    - .project-tag spans
+    - href on both buttons (live demo + github)
+  -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="label-line"></span>
+        <span>Projects</span>
+      </div>
+      <h2 class="section-title reveal">Things I've <span class="gradient-text">Built</span></h2>
+      <p class="section-sub reveal">A selection of projects I've crafted with care and curiosity.</p>
+
+      <div class="projects-grid">
+
+        <!-- ===== PROJECT 1 ===== -->
+        <div class="project-card reveal" data-index="1">
+          <div class="project-header">
+            <span class="project-number">01</span>
+            <div class="project-links">
+              <a href="#" class="proj-link" aria-label="Live Demo" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+              <a href="#" class="proj-link" aria-label="GitHub" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Portfolio Website</h3>
+            <p class="project-desc">A clean, animated personal portfolio built from scratch using pure HTML, CSS, and JS. Features scroll animations, typing effect, and a dark premium UI.</p>
+          </div>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span class="project-tag">HTML</span>
+              <span class="project-tag">CSS</span>
+              <span class="project-tag">JavaScript</span>
+            </div>
+          </div>
+          <div class="project-glow"></div>
+        </div>
+
+        <!-- ===== PROJECT 2 ===== -->
+        <div class="project-card reveal" data-index="2">
+          <div class="project-header">
+            <span class="project-number">02</span>
+            <div class="project-links">
+              <a href="#" class="proj-link" aria-label="Live Demo" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+              <a href="#" class="proj-link" aria-label="GitHub" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Weather Dashboard</h3>
+            <p class="project-desc">A real-time weather app using the OpenWeatherMap API. Features city search, temperature toggle, and animated weather icons for a delightful experience.</p>
+          </div>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">API</span>
+              <span class="project-tag">CSS Grid</span>
+            </div>
+          </div>
+          <div class="project-glow"></div>
+        </div>
+
+        <!-- ===== PROJECT 3 ===== -->
+        <div class="project-card reveal" data-index="3">
+          <div class="project-header">
+            <span class="project-number">03</span>
+            <div class="project-links">
+              <a href="#" class="proj-link" aria-label="Live Demo" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+              <a href="#" class="proj-link" aria-label="GitHub" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Task Manager App</h3>
+            <p class="project-desc">A productivity-focused task manager with local storage persistence, drag-and-drop reordering, priority tags, and smooth animations. Zero frameworks — pure JS.</p>
+          </div>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">LocalStorage</span>
+              <span class="project-tag">UX Design</span>
+            </div>
+          </div>
+          <div class="project-glow"></div>
+        </div>
+
+        <!-- ===== PROJECT 4 ===== -->
+        <div class="project-card reveal" data-index="4">
+          <div class="project-header">
+            <span class="project-number">04</span>
+            <div class="project-links">
+              <a href="#" class="proj-link" aria-label="Live Demo" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+              <a href="#" class="proj-link" aria-label="GitHub" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">E-Commerce Landing Page</h3>
+            <p class="project-desc">A high-converting product landing page with smooth hero animations, feature sections, testimonials, and a fully responsive mobile layout. Pixel-perfect design.</p>
+          </div>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span class="project-tag">HTML</span>
+              <span class="project-tag">CSS</span>
+              <span class="project-tag">Animations</span>
+            </div>
+          </div>
+          <div class="project-glow"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="label-line"></span>
+        <span>Contact</span>
+      </div>
+
+      <div class="contact-inner reveal">
+        <div class="contact-text">
+          <h2 class="section-title">Let's build something<br/><span class="gradient-text">great together.</span></h2>
+          <p>Whether it's a project collab, freelance work, or just a hello — my inbox is always open.</p>
+        </div>
+
+        <div class="contact-links">
+          <a href="mailto:saurav@email.com" class="contact-card">
+            <div class="contact-card-icon">✉️</div>
+            <div class="contact-card-info">
+              <span class="contact-card-label">Email</span>
+              <span class="contact-card-value">saurav@email.com</span>
+            </div>
+            <svg class="contact-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+
+          <a href="https://instagram.com/saurav" class="contact-card" target="_blank" rel="noopener">
+            <div class="contact-card-icon">📸</div>
+            <div class="contact-card-info">
+              <span class="contact-card-label">Instagram</span>
+              <span class="contact-card-value">@saurav</span>
+            </div>
+            <svg class="contact-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+
+          <a href="https://github.com/saurav" class="contact-card" target="_blank" rel="noopener">
+            <div class="contact-card-icon">🐙</div>
+            <div class="contact-card-info">
+              <span class="contact-card-label">GitHub</span>
+              <span class="contact-card-value">github.com/saurav</span>
+            </div>
+            <svg class="contact-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <p>Designed & Built by <strong>Saurav</strong> · <span id="year"></span></p>
+      <p class="footer-sub">Made with ❤️ and lots of ☕</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
